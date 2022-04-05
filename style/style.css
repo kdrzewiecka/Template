@@ -32,6 +32,13 @@ body nav label {
   height: 48px;
   right: 0;
   top: 0;
+  cursor: pointer;
+}
+body nav label div {
+  border: 2px solid #000;
+  position: absolute;
+  width: 80%;
+  left: 10%;
 }
 body nav ul {
   display: none;
