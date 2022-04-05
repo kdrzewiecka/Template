@@ -1,4 +1,6 @@
 $bgColor: blue;
+$buttonSize: 48px;
+
 *{box-sizing: border-box;}
 body {
 background-image: url(../img/04.04.jpg);
@@ -13,17 +15,42 @@ color: #ffff;
 
 
 
-    >header{    
+
+>header{    
     border:2px dashed red;
     display: flex;
-    }
+    justify-content:space-between;
+}
+    
 
-        nav{
-            border: 2px dashed blue;
+    nav{ 
+        // border: 2px dashed blue //
+        position: relative;
+        min-height: $buttonSize;
+
+    #toggler {display:none}
+
+    label{
+            border: 2px dashed yellow;
+            position: absolute;
+            width: $buttonSize;
+            height: $buttonSize;
+            right: 0;
+            top: 0;
+           
+    }
 
 
         ul{
             display: none;
+            border: 2px dashed blue;
+            //display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 0;
+            top: $buttonSize;
+            margin: 0;
+
             }
 
         #toggler:checked ~ ul{
@@ -34,8 +61,8 @@ color: #ffff;
 
        //@at-root .hamburger{
    // border: 2px dashed green;
-    }// zostal wywalony//
-}
+    // zostal wywalony//
+       }
 
     @media (min-width:768px) {
         nav{
