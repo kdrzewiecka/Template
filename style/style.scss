@@ -24,7 +24,6 @@ color: #ffff;
     
 
     nav{ 
-        // border: 2px dashed blue //
         position: relative;
         min-height: $buttonSize;
 
@@ -37,8 +36,21 @@ color: #ffff;
             height: $buttonSize;
             right: 0;
             top: 0;
+            //wskazac ze elelemnt jest aktywny, mozemy an niego kliknac
+            cursor: pointer;
+
+            //Hamburger 
+            div{
+                background-color: rgb(255, 255, 255);
+                position: absolute;
+                width: 80%;
+                left: 10%;
+                height: 10%;
+                &:nth-child(1){
+                 top: 20px;
+             }
            
-    }
+        }
 
 
         ul{
