@@ -1,20 +1,34 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
 
 body {
   background-image: url(../img/04.04.jpg);
-  background-size: 100% auto;
-  border: 10 px dashed red;
+  /*przykrywa cały obszar "cover"*/
+  background-size: cover;
+  background-position: right top;
   margin: 0;
+  /* zeby cal+y obszar styrony byl przylryty zdjeciem */
   min-height: 100vh;
+  color: white;
 }
 body > header {
   border: 2px dashed red;
+  display: flex;
 }
 body nav {
   border: 2px dashed blue;
 }
+body nav ul {
+  display: none;
+}
 body .hamburger {
   border: 2px dashed green;
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    display: flex;
+  }
 }/*# sourceMappingURL=style.css.map */
