@@ -18,10 +18,10 @@ body {
 
 
 >header{    
-    border:2px dashed red;
     padding: 1em 2em;
     display: flex;
     justify-content:space-between;
+    
 
     // bezposrednie dzieci headera div i nav z html
     > * {
@@ -32,7 +32,7 @@ body {
  } 
 }
 .pageLogo{
-    border:2px dashed red;
+    
     a{
         color: inherit; //dziedziczy po rodzicow
         text-decoration: none;
@@ -108,23 +108,24 @@ body {
                    text-align: center;
                   }
                 }
-                  #toggler:checked{
-                    ~ul {display: flex;}
-                    ~label{
-                 
-                     div{
-                       &:nth-child(1){
-                           background-color: red;
-                           transform: rotate(-135deg);
-                           top: 45%; //(polowa wysokosci kreski)
-                          }
-                       &:nth-child(2){
-                         opacity: 0;
-                     }
-                       &:nth-child(3){
-                         transform: rotate(-45deg);
-                         top:45%;
-                     }
+            }
+            #toggler:checked{
+                ~ul {display: flex;}
+                ~label{
+             
+                 div{
+                   &:nth-child(1){
+                       background-color: red;
+                       transform: rotate(-135deg);
+                       top: 45%; //(polowa wysokosci kreski)
+                      }
+                   &:nth-child(2){
+                     opacity: 0;
+                 }
+                   &:nth-child(3){
+                     transform: rotate(-45deg);
+                     top:45%;
+                 }
        
       //  #toggler:checked ~ ul{
         //    display: flex;
@@ -136,7 +137,7 @@ body {
          
      }
     } 
-}
+
     
 
        //@at-root .hamburger{
