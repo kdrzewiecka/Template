@@ -53,12 +53,12 @@ color: #ffff;
      #toggler {display:none}
 
      label{
-            border: 2px dashed yellow;
-            position: absolute;
-            width: $buttonSize;
-            height: $buttonSize;
-            right: 0;
-            top: 0;
+        position: absolute;
+        width: $buttonSize;
+        height: $buttonSize;
+        right:  0;
+        top: 0; 
+            
             //wskazac ze elelemnt jest aktywny, mozemy an niego kliknac
             cursor: pointer;
 
@@ -116,8 +116,7 @@ color: #ffff;
        #toggler:checked{
            ~ul {display: flex;}
            ~label{
-               border-color: blue;
-           }
+        
             div{
               &:nth-child(1){
                   background-color: red;
@@ -133,7 +132,7 @@ color: #ffff;
             }
          }
      }
-    
+    } 
 }
     
 
@@ -145,11 +144,11 @@ color: #ffff;
        //wyswietlanie na duze  ekrany
 
    @media (min-width:768px) {
-    label {display: none;}
-    ul{
-     display: flex;
-     flex-direction: row;
-     position: static;
+        label {display: none;}
+        ul{
+        display: flex;
+        flex-direction: row;
+        position: static;
      
     }
   }

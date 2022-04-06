@@ -16,6 +16,7 @@ body {
 
 > header {
   border: 2px dashed red;
+  padding: 1em 2em;
   display: flex;
   justify-content: space-between;
 }
@@ -44,7 +45,6 @@ nav #toggler {
   display: none;
 }
 nav label {
-  border: 2px dashed yellow;
   position: absolute;
   width: 48px;
   height: 48px;
@@ -92,18 +92,15 @@ nav label ul li a {
 nav label #toggler:checked ~ ul {
   display: flex;
 }
-nav label #toggler:checked ~ label {
-  border-color: blue;
-}
-nav label #toggler:checked div:nth-child(1) {
+nav label #toggler:checked ~ label div:nth-child(1) {
   background-color: red;
   transform: rotate(-135deg);
   top: 45%;
 }
-nav label #toggler:checked div:nth-child(2) {
+nav label #toggler:checked ~ label div:nth-child(2) {
   opacity: 0;
 }
-nav label #toggler:checked div:nth-child(3) {
+nav label #toggler:checked ~ label div:nth-child(3) {
   transform: rotate(-45deg);
   top: 45%;
 }
