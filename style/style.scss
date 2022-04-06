@@ -21,6 +21,26 @@ color: #ffff;
     border:2px dashed red;
     display: flex;
     justify-content:space-between;
+
+    // bezposrednie dzieci headera div i nav z html
+    > * {
+        display: flex;
+        align-items: center;
+
+    }
+}
+.pageLogo{
+    border:2px dashed red;
+    a{
+        color: inherit; //dziedziczy po rodzicow
+        text-decoration: none;
+        display: flex;
+    b{
+        font-size: 30px;
+    
+
+        }
+    }
 }
     
 
@@ -28,9 +48,10 @@ color: #ffff;
         position: relative;
         min-height: $buttonSize;
 
-    #toggler {display:none}
+        //domyslne wyswietlanie
+     #toggler {display:none}
 
-    label{
+     label{
             border: 2px dashed yellow;
             position: absolute;
             width: $buttonSize;
@@ -62,21 +83,35 @@ color: #ffff;
 
         ul{
             display: none;
-            border: 2px dashed blue;
-            //display: flex;
+            background-color: rgb(255, 255, 255, 0.2);
+            padding: 0.7;
+            border-radius: 10px;
+            list-style: none;
+            
             flex-direction: column;
             position: absolute;
             right: 0;
             top: $buttonSize;
             margin: 0;
 
+            li{
+              padding: .5em .8em;
+              a{
+               text-decoration: none;
+               color: inherit;
+               text-align: center;
+              }
+
             }
-        // po kliknieciu na hi+umburger
+
+            }
+       
       //  #toggler:checked ~ ul{
         //    display: flex;
        // } 
        // #toggler:checked ~ label
 
+ // po kliknieciu na hi+umburger
        #toggler:checked{
            ~ul {display: flex;}
            ~label{
@@ -106,11 +141,16 @@ color: #ffff;
     // zostal wywalony//
        }
 
-    @media (min-width:768px) {
-        nav{
-            ul{
-            display: flex;
-            }
-        }
+       //wyswietlanie na duze  ekrany
+
+   @media (min-width:768px) {
+    label {display: none;}
+    ul{
+     display: flex;
+     flex-direction: row;
+     position: static;
+     
     }
+  }
+
 
