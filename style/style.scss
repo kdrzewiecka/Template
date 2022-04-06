@@ -17,7 +17,7 @@ color: #ffff;
 
 
 
->header{    
+&>header{    
     border:2px dashed red;
     display: flex;
     justify-content:space-between;
@@ -48,9 +48,14 @@ color: #ffff;
                 left: 10%;
                 height: 10%;
                 &:nth-child(1){
-                 top: 20px;
+                 top: 17.5%;
              }
-           
+                &:nth-child(2){
+                    top: 45%;
+            }
+                &:nth-child(3){
+                    top: 80%;
+                }
         }
 
 

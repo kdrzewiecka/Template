@@ -13,19 +13,21 @@ body {
   min-height: 100vh;
   color: white;
 }
-body > header {
+
+ header {
   border: 2px dashed red;
   display: flex;
   justify-content: space-between;
 }
-body nav {
+
+nav {
   position: relative;
   min-height: 48px;
 }
-body nav #toggler {
+nav #toggler {
   display: none;
 }
-body nav label {
+nav label {
   border: 2px dashed yellow;
   position: absolute;
   width: 48px;
@@ -34,13 +36,23 @@ body nav label {
   top: 0;
   cursor: pointer;
 }
-body nav label div {
-  border: 2px solid #000;
+nav label div {
+  background-color: rgb(255, 255, 255);
   position: absolute;
   width: 80%;
   left: 10%;
+  height: 10%;
 }
-body nav ul {
+nav label div:nth-child(1) {
+  top: 17.5%;
+}
+nav label div:nth-child(2) {
+  top: 45%;
+}
+nav label div:nth-child(3) {
+  top: 80%;
+}
+nav label ul {
   display: none;
   border: 2px dashed blue;
   flex-direction: column;
@@ -49,7 +61,7 @@ body nav ul {
   top: 48px;
   margin: 0;
 }
-body nav #toggler:checked ~ ul {
+nav label #toggler:checked ~ ul {
   display: flex;
 }
 
