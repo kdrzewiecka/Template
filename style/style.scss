@@ -3,16 +3,16 @@ $buttonSize: 48px;
 
 *{box-sizing: border-box;}
 body {
-background-image: url(../img/04.04.jpg);
-/*przykrywa cały obszar "cover"*/
+    background-image: url(../img/04.04.jpg);
+    /*przykrywa cały obszar "cover"*/
 
-background-size: cover;
-background-position: right top;
-margin:0;
-/* zeby cal+y obszar styrony byl przylryty zdjeciem */
-min-height: 100vh;
-color: #ffff;
-}
+    background-size: cover;
+    background-position: right top;
+    margin:0;
+    /* zeby cal+y obszar styrony byl przylryty zdjeciem */
+    min-height: 100vh;
+    color: #ffff;
+   
 
 
 
@@ -29,6 +29,7 @@ color: #ffff;
         align-items: center;
 
     }
+ } 
 }
 .pageLogo{
     border:2px dashed red;
@@ -50,14 +51,15 @@ color: #ffff;
         min-height: $buttonSize;
 
         //domyslne wyswietlanie
-     #toggler {display:none}
+        #toggler {display:none}
 
-     label{
-        position: absolute;
-        width: $buttonSize;
-        height: $buttonSize;
-        right:  0;
-        top: 0; 
+        label{
+            position: absolute;
+            width: $buttonSize;
+            height: $buttonSize;
+            right:  0;
+            top: 0; 
+        }
             
             //wskazac ze elelemnt jest aktywny, mozemy an niego kliknac
             cursor: pointer;
@@ -79,33 +81,50 @@ color: #ffff;
                 &:nth-child(3){
                     top: 72.5%;
                 }
-        }
+      
 
 
-        ul{
-            display: none;
-            background-color: rgb(255, 255, 255, 0.2);
-            padding: 0.7;
-            border-radius: 10px;
-            list-style: none;
-            
-            flex-direction: column;
-            position: absolute;
-            right: 0;
-            top: $buttonSize;
-            margin: 0;
-
-            li{
-              padding: .5em .8em;
-              a{
-               text-decoration: none;
-               color: inherit;
-               text-align: center;
-              }
-
-            }
-
+    }
          }
+
+         ul{
+                display: none;
+                background-color: rgb(255, 255, 255, 0.2);
+                padding: 0.7;
+                border-radius: 10px;
+                list-style: none;
+                
+                flex-direction: column;
+                position: absolute;
+                right: 0;
+                top: $buttonSize;
+                margin: 0;
+    
+                li{
+                  padding: .5em .8em;
+                  a{
+                   text-decoration: none;
+                   color: inherit;
+                   text-align: center;
+                  }
+                }
+                  #toggler:checked{
+                    ~ul {display: flex;}
+                    ~label{
+                 
+                     div{
+                       &:nth-child(1){
+                           background-color: red;
+                           transform: rotate(-135deg);
+                           top: 45%; //(polowa wysokosci kreski)
+                          }
+                       &:nth-child(2){
+                         opacity: 0;
+                     }
+                       &:nth-child(3){
+                         transform: rotate(-45deg);
+                         top:45%;
+                     }
        
       //  #toggler:checked ~ ul{
         //    display: flex;
@@ -113,24 +132,8 @@ color: #ffff;
        // #toggler:checked ~ label
 
  // po kliknieciu na hi+umburger
-       #toggler:checked{
-           ~ul {display: flex;}
-           ~label{
-        
-            div{
-              &:nth-child(1){
-                  background-color: red;
-                  transform: rotate(-135deg);
-                  top: 45%; //(polowa wysokosci kreski)
-                 }
-              &:nth-child(2){
-                opacity: 0;
-            }
-              &:nth-child(3){
-                transform: rotate(-45deg);
-                top:45%;
-            }
-         }
+      
+         
      }
     } 
 }
