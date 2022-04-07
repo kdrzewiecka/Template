@@ -112,4 +112,23 @@ ul li a {
     flex-direction: row;
     position: static;
   }
+}
+main {
+  border: 5px dashed red;
+}
+main .wrapper {
+  border: dashed yellow;
+  display: flex;
+}
+main .wrapper > header {
+  border: 5px dashed blue;
+  flex: 1;
+}
+main .wrapper > article {
+  flex: 1;
+}
+main .wrapper > article header .container {
+  border: 5px dashed green;
+  overflow-y: scroll;
+  max-height: 15vh;
 }/*# sourceMappingURL=style.css.map */
