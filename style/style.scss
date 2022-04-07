@@ -1,6 +1,19 @@
 $bgColor: blue;
 $buttonSize: 48px;
 
+@mixin borderButton {
+    background-color: transparent;
+    border: 1px solid #fff;
+    height: 1,5em;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    
+}
+//* wywolujemy w miejscu gdzie ma byc ten kod zastosowany */    
+
+
 *{box-sizing: border-box;}
 body {
     background-image: url(../img/04.04.jpg);
@@ -126,24 +139,12 @@ body {
                      transform: rotate(-45deg);
                      top:45%;
                  }
-       
-      //  #toggler:checked ~ ul{
-        //    display: flex;
-       // } 
-       // #toggler:checked ~ label
-
- // po kliknieciu na hi+umburger
-      
+    
          
      }
     } 
 
-    
-
-       //@at-root .hamburger{
-   // border: 2px dashed green;
-    // zostal wywalony//
-       }
+ }
 
        //wyswietlanie na duze  ekrany
 
@@ -157,28 +158,50 @@ body {
     }
 }
 
+
     main{
         border:5px dashed red;
         .wrapper{
             border: dashed yellow;
-            display: flex;
+           
         
         > header{
-            border:5px dashed blue;
+            border:5px dashed green;
             flex:1
-        }
+            h1{
+                margin-bottom: 0;
+            }
+            h2{
+                margin-top: 0;
+            button{
+                @include borderButton();
+            }
+            }
+            
+           
+
+    }
         >article{
             flex: 1;
+            .playButton{
+                @include borderButton();
+
+            }
             header{
                 .container{
                     border: 5px dashed green;
                     overflow-y: scroll;
                     max-height:15vh;
                 }
-            }
-        }
-        
-    }
-  }
+            //* odnoszi sie do wrapper. ma byc w nim, URZADZENIA SZERSZE NIZ 768px
 
+       
+        }
+    } 
+    
+    @media(max-width:768px){
+        display:flex;
+     }
+}
+}
 

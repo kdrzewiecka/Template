@@ -118,17 +118,43 @@ main {
 }
 main .wrapper {
   border: dashed yellow;
-  display: flex;
 }
 main .wrapper > header {
-  border: 5px dashed blue;
-  flex: 1;
+  border: 5px dashed green;
+  flex: 1 h1;
+  flex-margin-bottom: 0;
+}
+main .wrapper > header h2 {
+  margin-top: 0;
+}
+main .wrapper > header h2 button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  height: 1, 5em;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
 }
 main .wrapper > article {
   flex: 1;
+}
+main .wrapper > article .playButton {
+  background-color: transparent;
+  border: 1px solid #fff;
+  height: 1, 5em;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
 }
 main .wrapper > article header .container {
   border: 5px dashed green;
   overflow-y: scroll;
   max-height: 15vh;
+}
+@media (max-width: 768px) {
+  main .wrapper {
+    display: flex;
+  }
 }/*# sourceMappingURL=style.css.map */
