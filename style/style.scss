@@ -1,7 +1,7 @@
 $bgColor: #b37676;
 $buttonSize: 48px;
 
-@mixin borderButton($padding){
+ @mixin borderButton($padding){
     background-color: transparent;
     border: 2px solid #fff;
     min-height: 1.5em;
@@ -15,236 +15,220 @@ $buttonSize: 48px;
     //padding: 1em;
     padding: $padding;
 }
-//* wywolujemy w miejscu gdzie ma byc ten kod zastosowany */    
+    //* wywolujemy w miejscu gdzie ma byc ten kod zastosowany */    
 
 
 *{box-sizing: border-box;}
-body {
+body{
     background-image: url(../img/04.04.jpg);
-    /*przykrywa cały obszar "cover"*/
+     /*przykrywa cały obszar "cover"*/
     background-size: cover;
     background-position: center top;
     margin:0;
-    /* zeby cal+y obszar styrony byl przylryty zdjeciem */
+        /* zeby cal+y obszar styrony byl przylryty zdjeciem */
     min-height: 100vh;
     color: #ffff;
-  
-    
-    >header{    
-        padding: 1em 2em;
+    > header{    
+       padding: 1em 2em;
+       display: flex;
+       justify-content:space-between;
+    }       
 
-        display: flex;
-        justify-content:space-between;
-        
-
-        // bezposrednie dzieci headera div i nav z html
-    > * {
+            // bezposrednie dzieci headera div i nav z html
+      > *{
         display: flex;
         align-items: center;
-
-         }
-    } 
-}
-    .pageLogo{
+      }        
         
-        a{
+    
+      .pageLogo{
+            // border: 2px dashed red;
+          a{
             color: inherit; //dziedziczy po rodzicow
             text-decoration: none;
             display: flex;
-        b{
-            font-size: 30px;
-        
-
-        }
-    }
-}
-    
-
-    nav{ 
-        position: relative;
-        min-height: $buttonSize;
-        //domyslne wyswietlanie
-       
-        #toggler {display:none}
-        
-        label{
-            position: absolute;
-            width: $buttonSize;
-            height: $buttonSize;
-            right:  0;
-            top: 0;
-            cursor: pointer;
-        }
-         
-        
-            
-            
-            
-
-            //Hamburger 
-               div{
-                transition:5s;
-                background-color: rgb(255, 255, 255);
-                position: absolute;
-                width: 80%;
-                left: 10%;
-                height: 10%;
-                &:nth-child(1){
-                 top: 17.5%;
-             }
-                &:nth-child(2){
-                    top: 45%;
+            b{
+              font-size: 30px;
             }
-                &:nth-child(3){
-                    top: 72.5%;
-                }
-      
-
-
-    }
          }
-
-         ul{
-                display: none;
-                background-color: rgb(255, 255, 255, 0.2);
-                padding: 0.7;
-                border-radius: 10px;
-                list-style: none;
-                
-                flex-direction: column;
-                position: absolute;
-                right: 0;
-                top: $buttonSize;
-                margin: 0;
+      }
     
-                li{
-                  padding: .5em .8em;
-                  a{
-                   text-decoration: none;
-                   color: inherit;
-                   text-align: center;
-                  }
-                }
-            }
-            #toggler:checked{
-                ~ul {display: flex;}
-                ~label{
-             
-                 div{
-                   &:nth-child(1){
-                       background-color: red;
-                       transform: rotate(-135deg);
-                       top: 45%; //(polowa wysokosci kreski)
-                      }
-                   &:nth-child(2){
-                     opacity: 0;
-                 }
-                   &:nth-child(3){
-                     transform: rotate(-45deg);
-                     top:45%;
-                 }
+    nav{ 
+      position: relative;
+      min-height: $buttonSize;
+         //domyslne wyswietlanie
+      #toggler {display:none}
+      label{
+        position: absolute;
+        width: $buttonSize;
+        height: $buttonSize;
+        right: 0;
+        top: 0;
+        cursor: pointer; 
+            
+        // HAMBURGER   
+        div{
+          transition:5s;
+          background-color: rgb(255, 255, 255);
+          position: absolute;
+          width: 80%;
+          left: 10%;
+          height: 10%;
+          &:nth-child(1){
+            top: 17.5%;
+          }
+          &:nth-child(2){
+            top: 45%;
+          }
+          &:nth-child(3){
+            top: 72.5%;
+          }
+        } 
+            
+      }
+      ul{
+        background-color: rgb(255, 255, 255, 0.2);
+        padding: 0.7px;
+        border-radius: 10px;
+        list-style: none;
+        
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: $buttonSize;
+        margin: 0;
+            
+        li{
+          padding: .7em .7em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          a{
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+          }
+        }
+      }
     
-         
-     }
-    } 
-
- }
-
-       //wyswietlanie na duze  ekrany
-
-   @media (min-width:768px) {
-        label {display: none;}
-        ul{
-        display: flex;
-        flex-direction: row;
-        position: static;
-     
+      #toggler:checked{
+        ~ul {display: flex;}
+        ~label{
+         border-color: blue;           
+         div{
+           &:nth-child(1){
+             transform: rotate(-135deg);
+             top: 45%; //(100% -polowa wysokosci kreski)
+           }
+           &:nth-child(2){
+             opacity: 0;
+           }
+           &:nth-child(3){
+             transform: rotate(-45deg);
+             top:45%;
+           }
+         }   
+       }       
     }
-}
+         //wyswietlanie na duze  ekrany
+
+    @media (min-width:768px) {
+                label {display: none;}
+                ul{
+                display: flex;
+                flex-direction: row;
+                position: static;
+            
+            }
+        }
 
 
     main{
-        margin-top: 10vh;
-        padding: 0 1em;
-        .wrapper{
-           // border: dashed yellow;
-        
-           
-            
-            
-            > header{    
-                flex:1;
-                h1{
-                    margin-bottom: 0;
-                }
-                h2{
-                    margin-top: 0;
-                }
-                button{
-                    @include borderButton( .5em 2.5em);
-                    margin-bottom: 10vh;
-                    
-                }
-                
-                
-            
-
+     margin-top: 10vh;
+     padding: 0 1em;
+     .wrapper{
+      // border: dashed yellow;
+        > header{    
+          flex:1;
+          h1{
+            margin-bottom: 0;
+         }
+          h2{
+            margin-top: 0;
+         }
+          button{
+            @include borderButton(.5em 2.5em);
+            margin-bottom: 10vh;
+          }                
         }
-            >article{
-                flex: 1;
-                border: 2px dashed red;
-                display: flex;
-                align-items: flex-start;
-
-            .playButton{
-                @include borderButton(1.5em);
-                border-radius: 50%;
-                position: relative;
-                span{
-                   // padding-left: 4px;
-                   // padding-top: 4px;
-                   position: absolute;
-                   top:0;
-                   left: .245em;
-                   border: 2px dashed red;
-                   font-size: 2.em;
-                }        
-                   
-                    
-                    
-
-            }
-             header{
-                 .container{
-                    padding-left: 1em;
-                    overflow-y: scroll;
-                    max-height:45vh;   
-                        
-                        
-                }
-            //odnoszi sie do wrapper. ma byc w nim, URZADZENIA SZERSZE NIZ 768px
-
-       
-           }
-      } 
     
+        > article{
+          flex: 2;
+          border: 2px dashed red;
+          display: flex;
+          align-items: flex-start;
+          .playButton{
+            @include borderButton(1.5em);
+            border-radius: 50%;
+            position: relative;
+            span{
+              position: absolute;
+              top:0;
+              left: .245em;
+              font-size: 2.5em;          
+           }        
+         }              
+         header{
+           .container{
+             padding-left: 1em;
+             overflow-y: scroll;
+             max-height:45vh;   
+           }
+         }          
+       
+       } 
+    }      
+           //odnoszi sie do wrapper. ma byc w nim, URZADZENIA SZERSZE NIZ 768}
+           
+            // .about{
+                // border: 2px dashed yellow;
+
+    
+    @media(max-width:768px){
+        margin-left: 15vw;
+        .wrapper{
+          display:flex;
+    }
+        .about{
+          width: 40%;
+    }
+}
+
+    footer{
+      .social{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2em;
+      }
+    }
+
+    @media (min-width: 768px){
+        footer{
+          position: fixed;
+          left: 0;
+          bottom: 0;
+           .social{
+            flex-direction: column;
+            div{
+             margin: .8em;
+          }
+        }
+    } 
+}
         
-    }
-       // .about{
-           // border: 2px dashed yellow;
-
-        }
-        @media(max-width:768px){
+          
+        
             
-            .wrapper{
-            display:flex;
-        }
-            .about{
-            border: 2px dashed red;
-            width: 40%;
-            }
-    }
 
-
-
-
+            
