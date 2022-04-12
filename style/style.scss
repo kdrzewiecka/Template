@@ -165,7 +165,6 @@ body{
     
         > article{
           flex: 2;
-          border: 2px dashed red;
           display: flex;
           align-items: flex-start;
           .playButton{
@@ -176,9 +175,11 @@ body{
               position: absolute;
               top:0;
               left: .245em;
-              font-size: 2.5em;          
-           }        
-         }              
+              font-size: 2.5em;
+            }       
+           }
+          }        
+                       
          header{
            .container{
              padding-left: 1em;

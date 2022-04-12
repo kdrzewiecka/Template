@@ -1,15 +1,12 @@
-@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
 
 body {
   background-image: url(../img/04.04.jpg);
-  /*przykrywa cały obszar "cover"*/
   background-size: cover;
-  background-position: right top;
+  background-position: center top;
   margin: 0;
-  /* zeby cal+y obszar styrony byl przylryty zdjeciem */
   min-height: 100vh;
   color: white;
 }
@@ -18,155 +15,178 @@ body > header {
   display: flex;
   justify-content: space-between;
 }
-body > header > * {
+body > * {
   display: flex;
   align-items: center;
 }
-
-.pageLogo a {
+body .pageLogo a {
   color: inherit;
   text-decoration: none;
   display: flex;
 }
-.pageLogo a b {
+body .pageLogo a b {
   font-size: 30px;
 }
-
-nav {
+body nav {
   position: relative;
   min-height: 48px;
-  cursor: pointer;
 }
-nav #toggler {
+body nav #toggler {
   display: none;
 }
-nav label {
+body nav label {
   position: absolute;
   width: 48px;
   height: 48px;
   right: 0;
   top: 0;
+  cursor: pointer;
 }
-nav div {
-  transition: 2s;
+body nav label div {
+  transition: 5s;
   background-color: rgb(255, 255, 255);
   position: absolute;
   width: 80%;
   left: 10%;
   height: 10%;
 }
-nav div:nth-child(1) {
+body nav label div:nth-child(1) {
   top: 17.5%;
 }
-nav div:nth-child(2) {
+body nav label div:nth-child(2) {
   top: 45%;
 }
-nav div:nth-child(3) {
+body nav label div:nth-child(3) {
   top: 72.5%;
 }
-
-ul {
-  display: none;
+body ul {
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 0.7;
+  padding: 0.7px;
   border-radius: 10px;
   list-style: none;
+  display: none;
   flex-direction: column;
   position: absolute;
   right: 0;
   top: 48px;
   margin: 0;
 }
-ul li {
-  padding: 0.5em 0.8em;
+body ul li {
+  padding: 0.7em 0.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-ul li a {
+body ul li a {
   text-decoration: none;
   color: inherit;
   text-align: center;
 }
-
-#toggler:checked ~ ul {
+body #toggler:checked ~ ul {
   display: flex;
 }
-#toggler:checked ~ label div:nth-child(1) {
-  background-color: red;
+body #toggler:checked ~ label {
+  border-color: blue;
+}
+body #toggler:checked ~ label div:nth-child(1) {
   transform: rotate(-135deg);
   top: 45%;
 }
-#toggler:checked ~ label div:nth-child(2) {
+body #toggler:checked ~ label div:nth-child(2) {
   opacity: 0;
 }
-#toggler:checked ~ label div:nth-child(3) {
+body #toggler:checked ~ label div:nth-child(3) {
   transform: rotate(-45deg);
   top: 45%;
 }
-
 @media (min-width: 768px) {
-  label {
+  body label {
     display: none;
   }
-
-  ul {
+  body ul {
     display: flex;
     flex-direction: row;
     position: static;
   }
 }
-main {
-  border: 5px dashed red;
+body main {
+  margin-top: 10vh;
+  padding: 0 1em;
 }
-main .wrapper {
-  border: dashed yellow;
-}
-main .wrapper > header {
-  border: 5px dashed green;
+body main .wrapper > header {
   flex: 1;
 }
-main .wrapper > header h1 {
+body main .wrapper > header h1 {
   margin-bottom: 0;
 }
-main .wrapper > header h2 {
+body main .wrapper > header h2 {
   margin-top: 0;
 }
-main .wrapper > header button {
+body main .wrapper > header button {
   background-color: transparent;
-  border: 1px solid #fff;
-  min-height: 1.5;
+  border: 2px solid green;
+  min-height: 1.5em;
   border-radius: 1.5em;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   padding: 0.5em 2.5em;
+  margin-bottom: 10vh;
 }
-main .wrapper > article {
-  flex: 1;
+body main .wrapper > article {
+  flex: 2;
+  display: flex;
+  align-items: flex-start;
 }
-main .wrapper > article .playButton {
+body main .wrapper > article .playButton {
   background-color: transparent;
-  border: 1px solid #fff;
-  min-height: 1.5;
+  border: 2px solid green;
+  min-height: 1.5em;
   border-radius: 1.5em;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  padding: 0;
-  font-size: 2em;
-  width: 1.5em;
-  min-height: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1.5em;
+  border-radius: 50%;
+  position: relative;
 }
-main .wrapper > article header .container {
-  border: 5px dashed green;
-  overflow-y: scroll;
-  height: 15vh;
+body main .wrapper > article .playButton span {
+  position: absolute;
+  top: 0;
+  left: 0.245em;
+  font-size: 2.5em;
+}
+body main .wrapper header .container {
+  padding-left: 1em;
+  display: block;
+  max-height: 45vh;
 }
 @media (max-width: 768px) {
-  main .wrapper {
+  body {
+    margin-left: 15vw;
+  }
+  body .wrapper {
     display: flex;
   }
+  body .about {
+    width: 40%;
+  }
 }
-
-/*# sourceMappingURL=style.css.map */
+body footer .social {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2em;
+}
+@media (min-width: 768px) {
+  body footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+  body footer .social {
+    flex-direction: column;
+  }
+  body footer .social div {
+    margin: 0.8em;
+  }
+}/*# sourceMappingURL=style.css.map */
