@@ -1,9 +1,9 @@
 $bgColor: #b37676;
 $buttonSize: 48px;
 
- @mixin borderButton($padding){
+ @mixin borderButton($padding) {
     background-color: transparent;
-    border: 2px solid #fff;
+    border: 2px solid green;
     min-height: 1.5em;
     border-radius: 1.5em;
     color: #fff;
@@ -15,23 +15,23 @@ $buttonSize: 48px;
     //padding: 1em;
     padding: $padding;
 }
-    //* wywolujemy w miejscu gdzie ma byc ten kod zastosowany */    
+    // wywolujemy w miejscu gdzie ma byc ten kod zastosowany   
 
 
 *{box-sizing: border-box;}
 body{
     background-image: url(../img/04.04.jpg);
-     /*przykrywa cały obszar "cover"*/
+     //przykrywa cały obszar "cover"
     background-size: cover;
     background-position: center top;
     margin:0;
-        /* zeby cal+y obszar styrony byl przylryty zdjeciem */
+        // zeby calyobszar styrony byl przylryty zdjeciem 
     min-height: 100vh;
     color: #ffff;
     > header{    
        padding: 1em 2em;
        display: flex;
-       justify-content:space-between;
+       justify-content: space-between;
     }       
 
             // bezposrednie dzieci headera div i nav z html
@@ -84,8 +84,8 @@ body{
             top: 72.5%;
           }
         } 
-            
-      }
+      }       
+    }
       ul{
         background-color: rgb(255, 255, 255, 0.2);
         padding: 0.7px;
@@ -119,7 +119,7 @@ body{
          div{
            &:nth-child(1){
              transform: rotate(-135deg);
-             top: 45%; //(100% -polowa wysokosci kreski)
+             top: 45%; 
            }
            &:nth-child(2){
              opacity: 0;
@@ -182,7 +182,7 @@ body{
          header{
            .container{
              padding-left: 1em;
-             overflow-y: scroll;
+             display: block;
              max-height:45vh;   
            }
          }          
@@ -224,6 +224,7 @@ body{
              margin: .8em;
           }
         }
+      }
     } 
 }
         
